@@ -1,0 +1,59 @@
+{
+  "name": "react-components-workbench",
+  "version": "1.0.0",
+  "description": "A test template for react components lib",
+  "author": "Roman Oskolkov <wild_neo@mail.ru> (https://github.com/wildneo)",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "module": "lib/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "start": "npx styleguidist server --open",
+    "build": "npm run clean && npm run build:tsc",
+    "build:tsc": "tsc --build --locale ru",
+    "build:sg": "npx styleguidist build",
+    "clean": "rm -rf ./lib",
+    "test": "jest --watch"
+  },
+  "jest": {
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
+    ]
+  },
+  "dependencies": {
+    "lodash.escaperegexp": "^4.1.2"
+  },
+  "devDependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@material-ui/styles": "^4.10.0",
+    "@material-ui/system": "^4.9.14",
+    "@material-ui/utils": "^4.10.2",
+    "@types/jest": "^26.0.4",
+    "@types/lodash.escaperegexp": "^4.1.6",
+    "@types/react": "^16.9.41",
+    "@types/react-dom": "^16.9.8",
+    "jest": "^26.1.0",
+    "jest-watch-typeahead": "^0.6.0",
+    "react": "^16.13.1",
+    "react-docgen-typescript": "^1.18.0",
+    "react-dom": "^16.13.1",
+    "react-styleguidist": "^11.0.8",
+    "ts-loader": "^8.0.1",
+    "typescript": "^3.9.6",
+    "webpack": "^4.43.0"
+  },
+  "peerDependencies": {
+    "@material-ui/core": "^4.0.0",
+    "@material-ui/icons": "^4.0.0",
+    "@material-ui/lab": "^4.0.0",
+    "@material-ui/styles": "^4.0.0",
+    "@material-ui/system": "^4.0.0",
+    "@material-ui/utils": "^4.0.0",
+    "react-dom": "^16.0.0",
+    "react": "^16.0.0"
+  }
+}
