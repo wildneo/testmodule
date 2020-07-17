@@ -8,9 +8,7 @@ export interface IconButtonWithTooltipProps extends IconButtonProps {
   buttonIcon: React.ReactNode
   /** Description of prop 'tooltipTitle'. */
   tooltipTitle?: TooltipProps['title']
-  /** Description of prop 'tooltipProps'. 
-   * @default 1111
-  */
+  /** Description of prop 'tooltipProps'. */
   tooltipProps?: Partial<TooltipProps>
   /** Description of prop 'Description'. */
   onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLLIElement, MouseEvent>) => void

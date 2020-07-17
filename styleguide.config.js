@@ -2,14 +2,20 @@ const fs = require('fs');
 const path = require('path');
 const package = require('./package.json');
 
+const pathes = {
+  src: path.resolve(__dirname, 'src'),
+  components: path.resolve(__dirname, 'src/components'),
+  hookDocs: path.resolve(__dirname, 'src/hooks/docs'),
+}
+
 module.exports = {
   title: package.name,
   pagePerSection: true,
   exampleMode: 'collapse',
   usageMode: 'collapse',
-  components: './src/components/**/*.tsx',
+  skipComponentsWithoutExample: true,
   moduleAliases: {
-    [package.name]: path.resolve(__dirname, 'src'),
+    [package.name]: pathes.src,
   },
   getComponentPathLine(componentPath) {
     const name = path.basename(path.dirname(componentPath));
@@ -32,15 +38,15 @@ module.exports = {
   sections: [
     {
       name: 'Components',
-      components: 'src/components/**/*.tsx',
+      components: path.join(pathes.components, '**/*.tsx'),
     },
     {
       name: 'Hooks',
-      sections: fs.readdirSync('src/hooks/')
+      sections: fs.readdirSync(pathes.hookDocs)
         .filter((file) => path.extname(file) === '.md')
         .map((file) => ({
           name: path.basename(file, '.md'),
-          content: `src/hooks/${file}`,
+          content: path.join(pathes.hookDocs, file),
         })),
     },
   ],
