@@ -6,6 +6,7 @@ export interface IconButtonWithTooltipProps extends IconButtonProps {
     tooltipTitle?: TooltipProps['title'];
     tooltipProps?: Partial<TooltipProps>;
     onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLLIElement, MouseEvent>) => void;
+    onClose?: (event: React.MouseEvent<HTMLButtonElement | HTMLLIElement, MouseEvent>) => void;
 }
 declare const IconButtonWithTooltip: (props: IconButtonWithTooltipProps) => JSX.Element;
 export default IconButtonWithTooltip;

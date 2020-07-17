@@ -14,7 +14,14 @@
     "build:tsc": "tsc --build tsconfig.build.json --locale ru",
     "build:doc": "npx styleguidist build",
     "clean": "rm -rf ./lib",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "test:colors": "jest --colors"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test:colors && npm run build && git add ./lib",
+      "pre-push": "npm run test:colors"
+    }
   },
   "jest": {
     "watchPlugins": [
@@ -47,6 +54,7 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
+    "husky": "^4.2.5",
     "jest": "^26.1.0",
     "jest-watch-typeahead": "^0.6.0",
     "react": "^16.13.1",

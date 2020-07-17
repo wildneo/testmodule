@@ -12,6 +12,7 @@ export interface IconButtonWithTooltipProps extends IconButtonProps {
   tooltipProps?: Partial<TooltipProps>
   /** Description of prop 'Description'. */
   onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLLIElement, MouseEvent>) => void
+  onClose?: (event: React.MouseEvent<HTMLButtonElement | HTMLLIElement, MouseEvent>) => void
 }
 
 /**
