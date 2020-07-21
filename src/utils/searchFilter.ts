@@ -1,17 +1,19 @@
 import escapeRegExp from 'lodash.escaperegexp';
 
+interface Options <T>{
+  includeProps: Partial<keyof T>[]
+  query: string
+  minQueryLength?: number
+}
 
-export default <T>(
-  objects: T[],
-  props: Partial<keyof T>[],
-  query: string,
-  minQueryLength: number = 1,
-) => {
-  if (query.length < minQueryLength) return objects;
+export default <T>(collection: T[], options: Options<T>) => {
+  const { query, includeProps, minQueryLength = 1 } = options;
+
+  if (query.length < minQueryLength) return collection;
 
   const exp = new RegExp(escapeRegExp(query), 'i');
   const predicate = (object: Record<keyof T, any>) => (
-    props.some((prop) => {
+    includeProps.some((prop) => {
       if (object[prop]) {
         return exp.test(object[prop].toString());
       }
@@ -19,5 +21,5 @@ export default <T>(
     })
   );
 
-  return objects.filter(predicate);
+  return collection.filter(predicate);
 };

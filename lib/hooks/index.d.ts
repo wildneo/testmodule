@@ -1,2 +1,2 @@
-export { default as useSearch } from './useSearch';
-export * from './useSearch';
+export { default as useSearchFilter } from './useSearchFilter';
+export * from './useSearchFilter';
