@@ -23,6 +23,7 @@ module.exports = {
   },
   propsParser: require('react-docgen-typescript')
     .withCustomConfig('./tsconfig.json', {
+      shouldRemoveUndefinedFromOptional: true,
       propFilter: (prop) => {
         if (prop.description.length === 0) {
           return false;

@@ -13,7 +13,8 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import TextField from '@material-ui/core/TextField';
 import ListItemText from '@material-ui/core/ListItemText';
-import { useSearchFilter, SearchInput } from 'react-components-workbench';
+import Divider from '@material-ui/core/Divider';
+import { useSearchFilter, SearchInputBase } from 'react-components-workbench';
 
 const cities = [
   { id: '1', name: 'London', code: 4420 },
@@ -27,15 +28,15 @@ const Example = () => {
   );
 
   return (
-    <div>
-      <SearchInput
+    <div style={{ width: '25%' }}>
+      <SearchInputBase
         {...inputProps}
-        inputComponent={TextField}
         messages={{
           searchPlaceholder: 'Начните печатать...',
           clearCommand: 'Очистить',
         }}
       />
+      <Divider />
       <List dense>
         {filteredCollection.map((city) => (
           <ListItem key={city.id}>

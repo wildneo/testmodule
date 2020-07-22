@@ -1,5 +1,6 @@
 __tests__/
 src/
+.eslintrc
 tsconfig.json
 tsconfig.build.json
 styleguide.config.js

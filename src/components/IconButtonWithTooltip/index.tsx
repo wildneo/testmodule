@@ -4,19 +4,23 @@ import IconButton, { IconButtonProps } from '@material-ui/core/IconButton';
 
 
 export interface IconButtonWithTooltipProps extends IconButtonProps {
-  /** Description of prop 'buttonIcon'. */
+  /** Иконка кнопки см. [`IconButton`](https://material-ui.com/components/buttons/#icon-buttons) */
   buttonIcon: React.ReactNode
-  /** Description of prop 'tooltipTitle'. */
+
+  /** Текст всплывающей подсказки */
   tooltipTitle?: TooltipProps['title']
-  /** Description of prop 'tooltipProps'. */
+
+  /** См. [`TooltipProps`](https://material-ui.com/api/tooltip/) */
   tooltipProps?: Partial<TooltipProps>
-  /** Description of prop 'Description'. */
+
+  /** Срабатывает при нажатии на кнопку */
   onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLLIElement, MouseEvent>) => void
-  onClose?: (event: React.MouseEvent<HTMLButtonElement | HTMLLIElement, MouseEvent>) => void
 }
 
 /**
- * General component description in JSDoc format. Markdown is *supported*.
+ * Компонент на основе [`IconButton`](https://material-ui.com/components/buttons/#icon-buttons) и [`Tooltip`](https://material-ui.com/components/tooltips/)
+ * Позволяет отопразить произвольный текст подсказки когда пользователь наводит
+ * курсор мыши на элемент, фокусируется на нем или нажимает на него.
  */
 const IconButtonWithTooltip = (props: IconButtonWithTooltipProps) => {
   const {

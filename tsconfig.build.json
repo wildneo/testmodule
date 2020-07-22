@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
     "isolatedModules": true,
+    "noUnusedLocals": true,
+    "declaration": true,
+    "outDir": "lib",
   },
   "extends": "./tsconfig",
   "exclude": [

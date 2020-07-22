@@ -7,16 +7,13 @@
     "listEmittedFiles": true,
     "esModuleInterop": true,
     "removeComments": true,
-    "noUnusedLocals": true,
     "skipLibCheck": true,
-    "declaration": true,
     "strict": true,
     "moduleResolution": "node",
     "lib": ["es5", "dom"],
     "module": "esnext",
     "target": "es5",
     "jsx": "react",
-    "outDir": "lib",
   },
   "include":[
     "src"
